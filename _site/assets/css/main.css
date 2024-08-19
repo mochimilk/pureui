@@ -348,16 +348,6 @@ header {
   margin: 12px;
 }
 
-@media only screen and (max-width: 1200px) {
-  header {
-    padding: 24px 48px;
-  }
-}
-@media only screen and (max-width: 800px) {
-  header {
-    padding: 16px 16px;
-  }
-}
 .intro {
   display: flex;
   flex-direction: column;
