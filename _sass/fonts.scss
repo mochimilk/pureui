@@ -13,7 +13,8 @@
 // Global
 body {
     color: var(--text-primary);
-    font-family: "SegoeUI-VF";
+    font-family: "SegoeUI-VF", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    ;
 }
 
 // Body
@@ -44,6 +45,7 @@ h1 {
     font-style: normal;
     font-weight: 600;
     line-height: 125%;
+    letter-spacing: -1.44px;
 }
 
 h2 {
@@ -51,6 +53,7 @@ h2 {
     font-style: normal;
     font-weight: 600;
     line-height: 135%;
+    letter-spacing: -0.72px;
 }
 
 h3 {
@@ -58,6 +61,7 @@ font-size: 24px;
 font-style: normal;
 font-weight: 600;
 line-height: 135%;
+letter-spacing: -0.48px;
 
 }
 
