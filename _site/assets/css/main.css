@@ -262,7 +262,7 @@ input:checked + .slider:before {
 }
 body {
   color: var(--text-primary);
-  font-family: "Segoe UI";
+  font-family: "SegoeUI-VF";
 }
 
 p.base {
@@ -486,7 +486,7 @@ header {
   padding: 48px;
   overflow: scroll;
   border-radius: 12px;
-  margin: 0 12px;
+  margin: 0 4px;
   gap: 24px;
 }
 
