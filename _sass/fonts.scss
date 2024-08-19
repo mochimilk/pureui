@@ -1,12 +1,12 @@
 @font-face {
     font-family: "SegoeUI-VF";
-    src: url("/assets/fonts/SegoeUI-VF.woff") format('woff'),
-        url("/assets/fonts/SegoeUI-VF.ttf") format('truetype');
+    src: url("../assets/fonts/SegoeUI-VF.woff") format('woff'),
+        url("../assets/fonts/SegoeUI-VF.ttf") format('truetype');
     font-weight: normal;
-    // font-style: normal;
-    // font-stretch: 75% 100%;
-    // font-style: oblique 0deg 12deg;
-    // font-weight: 100 900;
+    font-style: normal;
+    font-stretch: 75% 100%;
+    font-style: oblique 0deg 12deg;
+    font-weight: 100 900;
 
 }
 
@@ -66,4 +66,38 @@ line-height: 135%;
 
 
 
-
+.w100 {
+    font-variation-settings: 'wght' 100;
+  }
+  
+  .w200 {
+    font-variation-settings: 'wght' 200;
+  }
+  
+  .w300 {
+    font-variation-settings: 'wght' 300;
+  }
+  
+  .w400 {
+    font-variation-settings: 'wght' 400;
+  }
+  
+  .w500 {
+    font-variation-settings: 'wght' 500;
+  }
+  
+  .w600 {
+    font-variation-settings: 'wght' 600;
+  }
+  
+  .w700 {
+    font-variation-settings: 'wght' 700;
+  }
+  
+  .w800 {
+    font-variation-settings: 'wght' 800;
+  }
+  
+  .w800 {
+    font-variation-settings: 'wght' 900;
+  }
