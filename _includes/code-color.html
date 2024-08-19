@@ -1,0 +1,150 @@
+<div class="code-container">
+    <pre id="codeField" contenteditable="true" spellcheck="false">
+// GLOBAL COLORS
+$white: #ffffff;
+$grey1: #fafafa;
+$grey2: #f6f6f6;
+$grey3: #f0f0f0;
+$grey4: #ebebeb;
+$grey5: #e0e0e0;
+$grey6: #d2d2d2;
+$grey7: #bdbdbd;
+$grey8: #9c9c9c;
+$grey9: #707070;
+$grey10: #616161;
+$grey11: #424242;
+$grey12: #333333;
+$grey13: #242424;
+$grey14: #1f1f1f;
+$black: #000000;
+
+// ATMOS
+$atmos7: #253294;
+$atmos6: #3243C5;
+$atmos5: #3E54F7;
+$atmos4: #6576F9;
+$atmos3: #8B98FA;
+$atmos2: #B2BBFC;
+$atmos1: #D8DDFD;
+
+[data-theme="light"] {
+    // DEFAULT
+    --bg-primary: #{$white};
+    --bg-primary-hover: #{$grey4};
+    --bg-primary-pressed: #{$grey5};
+    --bg-secondary: #{$grey3};
+    --bg-secondary-hover: #{$grey4};
+    --bg-secondary-pressed: #{$grey5};
+    --text-primary: #{$grey14};
+    --text-secondary: #{$grey10};
+    --input-stroke: #{$grey8};
+    --input-stroke-hover: #{$grey10};
+    --input-stroke-pressed: #{$grey12};
+    // INVERSE
+    --bg-primary-inverse: #{$grey13};
+    --bg-primary-hover-inverse: #{$grey14};
+    --bg-primary-pressed-inverse: #{$black};
+    --bg-secondary-inverse: #{$grey12};
+    --bg-secondary-hover-inverse: #{$grey13};
+    --bg-secondary-pressed-inverse: #{$grey14};
+    --text-primary-inverse: #{$grey1};
+    --text-secondary-inverse: #{$grey8};
+    --input-stroke-inverse: #{$grey10};
+    --input-stroke-hover-inverse: #{$grey8};
+    --input-stroke-pressed-inverse: #{$grey6};
+    // ALPHA
+    --alpha: 90%;
+}
+
+[data-theme="dark"] {
+    // DEFAULT
+    --bg-primary: #{$grey13};
+    --bg-primary-hover: #{$grey14};
+    --bg-primary-pressed: #{$black};
+    --bg-secondary: #{$grey12};
+    --bg-secondary-hover: #{$grey13};
+    --bg-secondary-pressed: #{$grey14};
+    --text-primary: #{$grey1};
+    --text-secondary: #{$grey8};
+    --input-stroke: #{$grey10};
+    --input-stroke-hover: #{$grey8};
+    --input-stroke-pressed: #{$grey6};
+    // INVERSE
+    --bg-primary-inverse: #{$white};
+    --bg-primary-hover-inverse: #{$grey4};
+    --bg-primary-pressed-inverse: #{$grey5};
+    --bg-secondary-inverse: #{$grey3};
+    --bg-secondary-hover-inverse: #{$grey4};
+    --bg-secondary-pressed-inverse: #{$grey5};
+    --text-primary-inverse: #{$grey14};
+    --text-secondary-inverse: #{$grey10};
+    --input-stroke-inverse: #{$grey8};
+    --input-stroke-hover-inverse: #{$grey10};
+    --input-stroke-pressed-inverse: #{$grey12};
+    // ALPHA
+    --alpha: 90%;
+}
+    </pre>
+    
+</div>
+
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const codeField = document.getElementById('codeField');
+    const copyButton = document.getElementById('copyButton');
+
+    copyButton.addEventListener('click', () => {
+        const range = document.createRange();
+        range.selectNode(codeField);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+    });
+
+    codeField.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.key === 'a') {
+            event.preventDefault();
+            document.execCommand('selectAll');
+        }
+    });
+
+    codeField.addEventListener('input', () => {
+        applySyntaxHighlighting();
+    });
+
+    function applySyntaxHighlighting() {
+        const code = codeField.textContent;
+
+        let highlightedCode = code
+            .replace(/&/g, '&amp;') // Escape ampersands
+            .replace(/</g, '&lt;') // Escape less-than signs
+            .replace(/>/g, '&gt;') // Escape greater-than signs
+            .replace(/\n/g, '<br/>') // Handle line breaks
+            .replace(/(function|const|let|var|if|else|return|for|while|do|switch|case|break|continue|try|catch|finally|throw|class|extends|constructor|import|export|default|async|await)\b/g, '<span class="keyword">$1</span>')
+            .replace(/'(.*?)'/g, '<span class="string">\'$1\'</span>')
+            .replace(/\/\/\s*(GLOBAL COLORS|ATMOS|DEFAULT|INVERSE|ALPHA)/g, '<span class="comment">//$1</span>') // Highlight specific comments
+            .replace(/\/\*([\s\S]*?)\*\//g, '<span class="comment">/*$1*/</span>')
+            .replace(/&lt;\/?\w+[^&gt;]*&gt;/g, '<span class="html-tag">$&</span>') // HTML tags
+            .replace(/&lt;\/?\w+[^&gt;]*?(\s+\w+(\s*=\s*(["\'][^"|']*["\']|[^&gt;\s]+))?)*&gt;/g, (match) => {
+                return match.replace(/(\s+\w+)(\s*=\s*("|')[^"|']*("|'))?/g, '<span class="html-attribute">$1</span>$2');
+            })
+            .replace(/(\w+)\s*:/g, '<span class="css-property">$1</span>:')
+            .replace(/(\s*\{|\s*\})/g, '<span class="css-brace">$1</span>')
+            .replace(/;\s*/g, '<span class="css-semicolon">;</span>')
+            .replace(/(\$[\w-]+)\b/g, '<span class="scss-variable">$1</span>') // SCSS variables like $grey6
+            .replace(/(#\{?\$[\w-]+\}?)/g, '<span class="scss-interpolation">$1</span>') // SCSS interpolation like #{$grey6}
+            .replace(/(--[\w-]+)\b/g, '<span class="css-custom-property">$1</span>') // CSS custom properties like --bg-primary
+            .replace(/:\s*([\d.]+%)/g, '<span class="percentage">$1</span>'); // Highlight percentages like 90%
+
+        codeField.innerHTML = highlightedCode;
+    }
+
+    // Initial highlight
+    applySyntaxHighlighting();
+});
+
+</script>

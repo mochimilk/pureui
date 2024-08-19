@@ -1,0 +1,25 @@
+// Colors
+$bg-color: var(--bg-secondary);
+$dot-color: var(--text-secondary);
+
+// Dimensions
+$dot-size: 1.5px;
+$dot-space: 24px;
+
+.result {
+    display: block;
+    background:
+        linear-gradient(90deg, var(--bg-secondary) ($dot-space - $dot-size),
+            transparent 1%) center,
+        linear-gradient(var(--bg-secondary) ($dot-space - $dot-size),
+            transparent 1%) center,
+        $dot-color;
+    background-size: $dot-space $dot-space;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+    z-index: -50;
+}

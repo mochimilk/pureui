@@ -1,0 +1,22 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+ gap: $block48;
+align-items: center;
+ 
+    svg.pure {
+    
+            fill: var(--text-primary);
+            width: 100%; 
+    }
+}
+
+
+
+.intro-content {
+    display: flex;
+    gap: $block24;
+    max-width: 768px;
+    flex-direction: column;
+
+}
