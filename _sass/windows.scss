@@ -11,6 +11,7 @@
     backdrop-filter: blur(40px);
     animation: fadeInScaleUp 0.1s ease-out forwards;
     /* Animation added here */
+
 }
 
 
@@ -22,6 +23,12 @@
 #window2 {
     width: 70vw;
     height: 95vh;
+}
+
+#window3 {
+    width: 300px;
+    height: 350px;
+    background-color: $white;
 }
 
 .window.closing {
@@ -110,7 +117,7 @@
     border-radius: $block12;
     margin: 0 $block4;
     gap: 24px;
-
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .resize-handle {

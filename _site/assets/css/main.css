@@ -253,7 +253,7 @@ input:checked + .slider:before {
 
 @font-face {
   font-family: "SegoeUI-VF";
-  src: url("../assets/fonts/SegoeUI-VF.woff") format("woff"), url("../assets/fonts/SegoeUI-VF.ttf") format("truetype");
+  src: url("/assets/fonts/SegoeUI-VF.woff") format("woff"), url("/assets/fonts/SegoeUI-VF.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-stretch: 75% 100%;
@@ -448,6 +448,12 @@ header {
   height: 95vh;
 }
 
+#window3 {
+  width: 300px;
+  height: 350px;
+  background-color: #ffffff;
+}
+
 .window.closing {
   animation: fadeOutScaleDown 0.1s ease-in forwards;
 }
@@ -524,6 +530,7 @@ header {
   border-radius: 12px;
   margin: 0 4px;
   gap: 24px;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .resize-handle {
