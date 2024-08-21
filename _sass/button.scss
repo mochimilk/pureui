@@ -28,9 +28,11 @@ button.primary:active {
 button.secondary {
     color: var(--text-primary);
     background-color: transparent;
-    padding: $block12 $block16;
+    padding: $block8 $block16;
     height: 40px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2px;
     font-size: 14px;
     font-weight: 400;
@@ -40,6 +42,9 @@ button.secondary {
     border: 1px solid var(--input-stroke);
     border-radius: 4px;
     cursor: pointer;
+    svg {
+        fill: var(--text-primary);
+    }
 }
 
 button.secondary:hover {
