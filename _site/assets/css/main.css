@@ -657,7 +657,7 @@ header {
   cursor: pointer;
 }
 .toggleButton svg {
-  fill: var(--text-secondary);
+  fill: var(--text-primary);
 }
 
 .toggleButton:after {
