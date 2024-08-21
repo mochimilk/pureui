@@ -253,7 +253,7 @@ input:checked + .slider:before {
 
 @font-face {
   font-family: "SegoeUI-VF";
-  src: url("/assets/fonts/SegoeUI-VF.woff") format("woff"), url("/assets/fonts/SegoeUI-VF.ttf") format("truetype");
+  src: url("assets/fonts/SegoeUI-VF.woff") format("woff"), url("assets/fonts/SegoeUI-VF.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-stretch: 75% 100%;
@@ -397,7 +397,6 @@ header {
 
 .intro-content {
   display: flex;
-  gap: 24px;
   max-width: 768px;
   flex-direction: column;
 }
@@ -449,9 +448,8 @@ header {
 }
 
 #window3 {
-  width: 300px;
-  height: 350px;
-  background-color: #ffffff;
+  width: 60vw;
+  height: 75vh;
 }
 
 .window.closing {
@@ -522,15 +520,26 @@ header {
 }
 
 .window-content {
+  gap: 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
   padding: 48px;
   overflow: scroll;
-  border-radius: 12px;
   margin: 0 4px;
-  gap: 24px;
   overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.window-content h1, .window-content h2 {
+  margin-top: 24px;
+}
+.window-content h3 {
+  margin-top: 48px;
+}
+.window-content p {
+  margin-top: 16px;
+}
+.window-content p.callout {
+  margin-top: 48px;
 }
 
 .resize-handle {

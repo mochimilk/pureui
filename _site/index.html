@@ -4,8 +4,8 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<title></title>
-	<link rel="stylesheet" href="/assets/css/main.css">
+	<title>PureUI</title>
+	<link rel="stylesheet" href="/pureui/assets/css/main.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
@@ -292,15 +292,23 @@
         </button></div>
     </div>
     <!-- Window content -->
-    <div class="window-content"><h1>Colors</h1>
+    <div class="window-content"><div class="intro-content">
 
-<h2>Atmos</h2>
+    <h2>Atmos</h2>
 
-<p>A minimal design system focuses on the most essential components and guidelines, making it easier for designers and developers to understand and use. There's less cognitive load when the system isn’t cluttered with unnecessary elements.</p>
+    <p style="color: var(--text-secondary);">Classic Microsoft Blue.</p>
+
+</div>
 
 <img src="assets/uploads/colors.png" alt="Microsoft Atmos Colors">
 
-<h2>Grey</h2>
+<div class="intro-content">
+
+    <h2>Grey</h2>
+
+    <p style="color: var(--text-secondary);">Fluent neutrals.</p>
+
+</div>
 <img src="assets/uploads/colors2.jpg" alt="Fluent Greys">
 
 <div class="code-container">
@@ -452,8 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applySyntaxHighlighting();
 });
 
-</script>
-</div>
+</script></div>
     <!-- Window resize handles -->
     <div class="resize-handle top-left"></div>
     <div class="resize-handle top-right"></div>
@@ -479,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
         </div>
         <!-- Window header center -->
-        <p class="small">merp.gif</p>
+        <p class="small">type.gif</p>
         <!-- Window header right -->
         <div class="window-header-child-r"><button class="close-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -489,7 +496,131 @@ document.addEventListener('DOMContentLoaded', () => {
         </button></div>
     </div>
     <!-- Window content -->
-    <div class="window-content"><img src="assets/uploads/merp.gif" alt="merp"></div>
+    <div class="window-content"><div class="intro-content">
+
+    <h2>Typography</h2>
+
+    <p style="color: var(--text-secondary);">Minimal, with a punch.</p>
+
+</div>
+
+
+<img src="assets/uploads/type.jpg" alt="Microsoft Atmos Colors">
+
+
+<div class="code-container">
+    <pre id="codeField" contenteditable="true" spellcheck="false">
+        @font-face {
+            font-family: "SegoeUI-VF";
+            src: url("assets/fonts/SegoeUI-VF.woff") format('woff'),
+                url("assets/fonts/SegoeUI-VF.ttf") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: 75% 100%;
+            font-style: oblique 0deg 12deg;
+            font-weight: 100 900;
+        
+        }
+        
+        // Global
+        body {
+            color: var(--text-primary);
+            font-family: "SegoeUI-VF", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            ;
+        }
+        
+        // Body
+        p.base {
+            font-size: 16px;
+            line-height: 135%;
+        }
+        
+        p.small {
+            font-size: 14px;
+            line-height: 135%;
+        }
+        
+        p.callout {
+            font-size: 32px;
+            font-style: normal;
+            line-height: 135%;
+            letter-spacing: -0.32px;
+        }
+        
+        #semibold {
+            font-weight: 500;
+        }
+        
+        
+        h1 {
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%;
+            letter-spacing: -1.44px;
+        }
+        
+        h2 {
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 135%;
+            letter-spacing: -0.72px;
+        }
+        
+        h3 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 135%;
+        letter-spacing: -0.48px;
+        
+        }
+        
+        .w100 {
+            font-variation-settings: 'wght' 100;
+          }
+          
+          .w200 {
+            font-variation-settings: 'wght' 200;
+          }
+          
+          .w300 {
+            font-variation-settings: 'wght' 300;
+          }
+          
+          .w400 {
+            font-variation-settings: 'wght' 400;
+          }
+          
+          .w500 {
+            font-variation-settings: 'wght' 500;
+          }
+          
+          .w600 {
+            font-variation-settings: 'wght' 600;
+          }
+          
+          .w700 {
+            font-variation-settings: 'wght' 700;
+          }
+          
+          .w800 {
+            font-variation-settings: 'wght' 800;
+          }
+          
+          .w800 {
+            font-variation-settings: 'wght' 900;
+          }
+        
+    </pre>
+    
+</div>
+
+
+
+
+</div>
     <!-- Window resize handles -->
     <div class="resize-handle top-left"></div>
     <div class="resize-handle top-right"></div>
