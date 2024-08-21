@@ -31,7 +31,8 @@ $atmos1: #D8DDFD;
 
 
 
-[data-theme="light"] {
+html,
+html[data-theme="light"] {
   // DEFAULT
 	--bg-primary: #{$white};
   --bg-primary-hover: #{$grey4};
@@ -62,7 +63,8 @@ $atmos1: #D8DDFD;
   --bg-primary-inverse-opacity10: #{$grey13-opacity10}
 }
 
-[data-theme="dark"] {
+html,
+html[data-theme="dark"]{
   // DEFAULT
 	--bg-primary: #{$grey13};
   --bg-primary-hover: #{$grey14};

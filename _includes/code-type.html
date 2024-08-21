@@ -1,25 +1,13 @@
 <div class="code-container">
-    <pre id="codeField" contenteditable="true" spellcheck="false">
-@font-face {
-    font-family: "SegoeUI-VF";
-    src: url("assets/fonts/SegoeUI-VF.woff") format('woff'),
-        url("assets/fonts/SegoeUI-VF.ttf") format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: 75% 100%;
-    font-style: oblique 0deg 12deg;
-    font-weight: 100 900;
-
-}
-
-// Global
+    <pre id="codeField2" contenteditable="false" spellcheck="false">
+// GLOBAL
 body {
     color: var(--text-primary);
-    font-family: "SegoeUI-VF", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     ;
 }
 
-// Body
+// BODY
 p.base {
     font-size: 16px;
     line-height: 135%;
@@ -30,6 +18,13 @@ p.small {
     line-height: 135%;
 }
 
+p.emphasis {
+    font-size: 20px;
+    font-style: normal;
+    line-height: 135%;
+    letter-spacing: -0.32px;
+}
+
 p.callout {
     font-size: 32px;
     font-style: normal;
@@ -37,11 +32,23 @@ p.callout {
     letter-spacing: -0.32px;
 }
 
+
+// Use this as an "ID" tag to get the semibold variant. Do not use this on titles or headers
 #semibold {
     font-weight: 500;
 }
 
+// TITLE
+title {
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    /* 100px */
+    letter-spacing: -1.6px;
+}
 
+// HEADERS
 h1 {
     font-size: 48px;
     font-style: normal;
@@ -59,49 +66,81 @@ h2 {
 }
 
 h3 {
-font-size: 24px;
-font-style: normal;
-font-weight: 600;
-line-height: 135%;
-letter-spacing: -0.48px;
-
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 135%;
+    letter-spacing: -0.48px;
 }
 
-.w100 {
-    font-variation-settings: 'wght' 100;
-    }
-    
-    .w200 {
-    font-variation-settings: 'wght' 200;
-    }
-    
-    .w300 {
-    font-variation-settings: 'wght' 300;
-    }
-    
-    .w400 {
-    font-variation-settings: 'wght' 400;
-    }
-    
-    .w500 {
-    font-variation-settings: 'wght' 500;
-    }
-    
-    .w600 {
-    font-variation-settings: 'wght' 600;
-    }
-    
-    .w700 {
-    font-variation-settings: 'wght' 700;
-    }
-    
-    .w800 {
-    font-variation-settings: 'wght' 800;
-    }
-    
-    .w800 {
-    font-variation-settings: 'wght' 900;
-    }
+h4 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    letter-spacing: -0.48px;
+}
     </pre>
 
 </div>
+
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const codeField2 = document.getElementById('codeField2');
+    const copyButton = document.getElementById('copyButton');
+
+    copyButton.addEventListener('click', () => {
+        const range = document.createRange();
+        range.selectNode(codeField2);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+    });
+
+    codeField2.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.key === 'a') {
+            event.preventDefault();
+            document.execCommand('selectAll');
+        }
+    });
+    
+        codeField2.addEventListener('input', () => {
+            applySyntaxHighlighting();
+        });
+    
+        function applySyntaxHighlighting() {
+            const code = codeField2.textContent;
+    
+            let highlightedCode = code
+                .replace(/&/g, '&amp;') // Escape ampersands
+                .replace(/</g, '&lt;') // Escape less-than signs
+                .replace(/>/g, '&gt;') // Escape greater-than signs
+                .replace(/\n/g, '<br/>') // Handle line breaks
+                .replace(/(function|const|let|var|if|else|return|for|while|do|switch|case|break|continue|try|catch|finally|throw|class|extends|constructor|import|export|default|async|await)\b/g, '<span class="keyword">$1</span>')
+                .replace(/'(.*?)'/g, '<span class="string">\'$1\'</span>')
+                .replace(/\/\/\s*(GLOBAL COLORS|ATMOS|DEFAULT|INVERSE|ALPHA)/g, '<span class="comment">//$1</span>') // Highlight specific comments
+                .replace(/\/\*([\s\S]*?)\*\//g, '<span class="comment">/*$1*/</span>')
+                .replace(/&lt;\/?\w+[^&gt;]*&gt;/g, '<span class="html-tag">$&</span>') // HTML tags
+                .replace(/&lt;\/?\w+[^&gt;]*?(\s+\w+(\s*=\s*(["\'][^"|']*["\']|[^&gt;\s]+))?)*&gt;/g, (match) => {
+                    return match.replace(/(\s+\w+)(\s*=\s*("|')[^"|']*("|'))?/g, '<span class="html-attribute">$1</span>$2');
+                })
+                .replace(/(\w+)\s*:/g, '<span class="css-property">$1</span>:')
+                .replace(/(\s*\{|\s*\})/g, '<span class="css-brace">$1</span>')
+                .replace(/;\s*/g, '<span class="css-semicolon">;</span>')
+                .replace(/(\$[\w-]+)\b/g, '<span class="scss-variable">$1</span>') // SCSS variables like $grey6
+                .replace(/(#\{?\$[\w-]+\}?)/g, '<span class="scss-interpolation">$1</span>') // SCSS interpolation like #{$grey6}
+                .replace(/(--[\w-]+)\b/g, '<span class="css-custom-property">$1</span>') // CSS custom properties like --bg-primary
+                .replace(/:\s*([\d.]+%)/g, '<span class="percentage">$1</span>'); // Highlight percentages like 90%
+    
+            codeField2.innerHTML = highlightedCode;
+        }
+    
+        // Initial highlight
+        applySyntaxHighlighting();
+    });
+    
+    </script>
