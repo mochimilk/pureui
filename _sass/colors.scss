@@ -60,7 +60,11 @@ html[data-theme="light"] {
   // ALPHA
   --alpha: 90%;
   --bg-primary-opacity90: #{$white-opacity90};
-  --bg-primary-inverse-opacity10: #{$grey13-opacity10}
+  --bg-primary-inverse-opacity10: #{$grey13-opacity10};
+  // ATMOS
+  --atmos-default: #{$atmos5};
+  --atmos-default-hover: #{$atmos6};
+  --atmos-default-pressed: #{$atmos7};
 }
 
 html,
@@ -92,6 +96,10 @@ html[data-theme="dark"]{
     // ALPHA
     --alpha: 90%;
     --bg-primary-opacity90: #{$grey13-opacity90};
-    --bg-primary-inverse-opacity10: #{$white-opacity10}
+    --bg-primary-inverse-opacity10: #{$white-opacity10};
+      // ATMOS
+  --atmos-default: #{$atmos5};
+  --atmos-default-hover: #{$atmos6};
+  --atmos-default-pressed: #{$atmos7};
 }
 

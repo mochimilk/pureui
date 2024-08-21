@@ -1,0 +1,10 @@
+.component-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    height: $block256;
+    padding: 64px;
+    background-color: var(--bg-primary-opacity90);
+
+}

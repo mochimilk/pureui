@@ -1,18 +1,53 @@
-// @font-face {
-//     font-family: "SegoeUI-VF";
-//     src: url("assets/fonts/SegoeUI-VF.woff") format('woff'),
-//         url("assets/fonts/SegoeUI-VF.ttf") format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-stretch: 75% 100%;
-//     font-style: oblique 0deg 12deg;
-//     font-weight: 100 900;
-// }
+@font-face {
+  font-family: "SegoeUI-VF";
+  src: url("../../assets/fonts/SegoeUI-VF.woff") format('woff'),
+    url("../../assets/fonts/SegoeUI-VF.ttf") format('truetype');
+  font-stretch: 75% 100%;
+  font-style: oblique 0deg 12deg;
+  font-weight: 100 900;
+}
+
+.w100 {
+  font-variation-settings: 'wght' 100;
+}
+
+.w200 {
+  font-variation-settings: 'wght' 200;
+}
+
+.w300 {
+  font-variation-settings: 'wght' 300;
+}
+
+.w400 {
+  font-variation-settings: 'wght' 400;
+}
+
+.w500 {
+  font-variation-settings: 'wght' 500;
+}
+
+.w600 {
+  font-variation-settings: 'wght' 600;
+}
+
+.w700 {
+  font-variation-settings: 'wght' 700;
+}
+
+.w800 {
+  font-variation-settings: 'wght' 800;
+}
+
+.w800 {
+  font-variation-settings: 'wght' 900;
+}
 
 // GLOBAL
 body {
   color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Segoe UI', 'SegoeUI-VF', sans-serif;
+  // , -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   ;
 }
 
@@ -29,14 +64,14 @@ p.small {
 
 p.emphasis {
   font-size: 20px;
-  font-style: normal;
+
   line-height: 135%;
   letter-spacing: -0.32px;
 }
 
 p.callout {
   font-size: 32px;
-  font-style: normal;
+
   line-height: 135%;
   letter-spacing: -0.32px;
 }
@@ -51,16 +86,13 @@ p.callout {
 title {
   font-size: 80px;
   font-style: normal;
-  font-weight: 400;
   line-height: 125%;
-  /* 100px */
   letter-spacing: -1.6px;
 }
 
 // HEADERS
 h1 {
   font-size: 48px;
-  font-style: normal;
   font-weight: 600;
   line-height: 125%;
   letter-spacing: -1.44px;
@@ -68,7 +100,6 @@ h1 {
 
 h2 {
   font-size: 36px;
-  font-style: normal;
   font-weight: 600;
   line-height: 135%;
   letter-spacing: -0.72px;
@@ -76,7 +107,6 @@ h2 {
 
 h3 {
   font-size: 24px;
-  font-style: normal;
   font-weight: 600;
   line-height: 135%;
   letter-spacing: -0.48px;
@@ -84,7 +114,6 @@ h3 {
 
 h4 {
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
   line-height: 125%;
   letter-spacing: -0.48px;
