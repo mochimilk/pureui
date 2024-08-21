@@ -24,7 +24,7 @@ button.primary {
   display: flex;
   gap: 2px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 115%;
   text-align: center;
   text-decoration: none;
@@ -120,7 +120,6 @@ button.tertiary:active {
   overflow: auto;
   white-space: pre-wrap;
   outline: none;
-  caret-color: black;
   line-height: 1.5;
 }
 
@@ -386,6 +385,7 @@ input:checked + .slider:before {
 body {
   color: var(--text-primary);
   font-family: "Segoe UI", "SegoeUI-VF", sans-serif;
+  caret-color: var(--text-primary);
 }
 
 p.base {

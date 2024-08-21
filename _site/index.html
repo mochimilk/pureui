@@ -338,7 +338,7 @@
     <p style="color: var(--text-secondary);">You can use ctrl+a within the text field to select just the code.</p>
 </div>
 <div class="code-container">
-    <pre id="codeField" contenteditable="false" spellcheck="false">
+    <pre id="codeField" contenteditable="true" spellcheck="false">
 // GLOBAL COLORS
 $white: #ffffff;
 $grey1: #fafafa;
@@ -540,8 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <p style="color: var(--text-secondary);">You can use ctrl+a within the text field to select just the code.</p>
 </div>
 <div class="code-container">
-    <pre id="codeField2" contenteditable="false" spellcheck="false">
-        <code>
+    <pre id="codeField2" contenteditable="true" spellcheck="false">
 // GLOBAL
 body {
     color: var(--text-primary);
@@ -622,9 +621,7 @@ h4 {
     line-height: 125%;
     letter-spacing: -0.48px;
 }
-</code>
     </pre>
-
 </div>
 
 
@@ -740,8 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <p style="color: var(--text-secondary);">You can use ctrl+a within the text field to select just the code.</p>
 </div>
 <div class="code-container">
-    <pre id="codeField3" contenteditable="false" spellcheck="false">
-        <code>
+    <pre id="codeField3" contenteditable="true" spellcheck="false">
 // PRIMARY
 button.primary {
     color: #fafafa;
@@ -821,9 +817,7 @@ button.tertiary:hover {
 button.tertiary:active {
     background-color: var(--bg-primary-pressed);
 }
-</code>
     </pre>
-
 </div>
 
 
@@ -864,7 +858,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .replace(/\n/g, '<br/>') // Handle line breaks
                 .replace(/(function|const|let|var|if|else|return|for|while|do|switch|case|break|continue|try|catch|finally|throw|class|extends|constructor|import|export|default|async|await)\b/g, '<span class="keyword">$1</span>')
                 .replace(/'(.*?)'/g, '<span class="string">\'$1\'</span>')
-                .replace(/\/\/\s*(GLOBAL COLORS|ATMOS|DEFAULT|INVERSE|ALPHA|GLOBAL|BODY|TITLE|HEADERS)/g, '<span class="comment">//$1</span>') // Highlight specific comments
+                .replace(/\/\/\s*(GLOBAL COLORS|ATMOS|DEFAULT|INVERSE|ALPHA|GLOBAL|BODY|TITLE|HEADER|PRIMARY|SECONDARY|TERTIARY)/g, '<span class="comment">//$1</span>') // Highlight specific comments
                 .replace(/\/\*([\s\S]*?)\*\//g, '<span class="comment">/*$1*/</span>')
                 .replace(/&lt;\/?\w+[^&gt;]*&gt;/g, '<span class="html-tag">$&</span>') // HTML tags
                 .replace(/&lt;\/?\w+[^&gt;]*?(\s+\w+(\s*=\s*(["\'][^"|']*["\']|[^&gt;\s]+))?)*&gt;/g, (match) => {
