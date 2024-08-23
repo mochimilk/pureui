@@ -465,8 +465,8 @@ footer {
 }
 
 .guide {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: flex-start;
   gap: 16px;
   width: 100%;
