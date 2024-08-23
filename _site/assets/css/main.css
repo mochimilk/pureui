@@ -654,7 +654,7 @@ input:checked + .slider:before {
 
 #window1 {
   width: 80vw;
-  height: 80vh;
+  height: 81vh;
 }
 
 #window2 {
@@ -745,7 +745,6 @@ input:checked + .slider:before {
 }
 
 .window-content {
-  gap: 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -753,6 +752,7 @@ input:checked + .slider:before {
   overflow: scroll;
   margin: 0 4px;
   overflow-x: hidden; /* Hide horizontal scrollbar */
+  gap: 24px;
 }
 .window-content h1, .window-content h2 {
   margin-top: 24px;
