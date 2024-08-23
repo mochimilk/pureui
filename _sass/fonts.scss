@@ -118,3 +118,19 @@ h4 {
   line-height: 125%;
   letter-spacing: -0.48px;
 }
+
+/* unvisited link */
+a:link {
+  color: var(--text-primary);
+  text-decoration: underline;
+  }
+
+  a:link:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+    }
+  
+  /* visited link */
+  a:visited {
+  color: var(--text-primary);
+  }

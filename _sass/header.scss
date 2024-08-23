@@ -16,4 +16,7 @@ header {
 	backdrop-filter: blur(6px);
 	margin: $block12;
 	// filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.30));
+	svg {
+		fill: var(--text-primary) !important;
+	}
 }

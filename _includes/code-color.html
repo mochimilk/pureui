@@ -17,6 +17,10 @@ $grey12: #333333;
 $grey13: #242424;
 $grey14: #1f1f1f;
 $black: #000000;
+$grey13-opacity90:  #24242490;
+$white-opacity90:  #ffffff90;
+$grey13-opacity10:  #24242410;
+$white-opacity10:  #ffffff10;
 
 // ATMOS
 $atmos7: #253294;
@@ -27,7 +31,10 @@ $atmos3: #8B98FA;
 $atmos2: #B2BBFC;
 $atmos1: #D8DDFD;
 
-[data-theme="light"] {
+
+
+html,
+html[data-theme="light"] {
     // DEFAULT
     --bg-primary: #{$white};
     --bg-primary-hover: #{$grey4};
@@ -54,9 +61,16 @@ $atmos1: #D8DDFD;
     --input-stroke-pressed-inverse: #{$grey6};
     // ALPHA
     --alpha: 90%;
+    --bg-primary-opacity90: #{$white-opacity90};
+    --bg-primary-inverse-opacity10: #{$grey13-opacity10};
+    // ATMOS
+    --atmos-default: #{$atmos5};
+    --atmos-default-hover: #{$atmos6};
+    --atmos-default-pressed: #{$atmos7};
 }
 
-[data-theme="dark"] {
+html,
+html[data-theme="dark"]{
     // DEFAULT
     --bg-primary: #{$grey13};
     --bg-primary-hover: #{$grey14};
@@ -83,7 +97,13 @@ $atmos1: #D8DDFD;
     --input-stroke-pressed-inverse: #{$grey12};
     // ALPHA
     --alpha: 90%;
-}
+    --bg-primary-opacity90: #{$grey13-opacity90};
+    --bg-primary-inverse-opacity10: #{$white-opacity10};
+        // ATMOS
+    --atmos-default: #{$atmos5};
+    --atmos-default-hover: #{$atmos6};
+    --atmos-default-pressed: #{$atmos7};
+}        
     </pre>
     
 </div>

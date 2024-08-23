@@ -1,0 +1,138 @@
+<div class="code-container">
+    <pre id="codeField4" contenteditable="true" spellcheck="false">
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+
+    em {
+        margin-left: 10px;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        font-family: "Andalé Mono", monospace;
+        text-transform: uppercase;
+        font-style: normal;
+        color: var(--text-primary);
+    }
+}
+
+.theme-switch,
+.switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 48px;
+}
+
+.theme-switch input,
+.switch input {
+    display: none;
+}
+
+.slider {
+    background-color: var(--bg-secondary);
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    top: 0px;
+    transition: 0.4s;
+    outline: 1px solid var(--input-stroke);
+}
+
+.slider:hover {
+    outline: 1px solid var(--input-stroke-hover);
+}
+
+.slider:before {
+    background-color: var(--bg-primary-inverse);
+    bottom: 2px;
+    content: "";
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    transition: 0.4s;
+    width: 20px;
+}
+
+input:checked+.slider {
+    background-color: $atmos5;
+    outline: none;
+}
+
+input:checked+.slider:before {
+    background-color: $grey1;
+    transform: translateX(24px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    background-color: var(--bg-primary-inverse);
+    border-radius: 50%;
+}
+    </pre>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const codeField4 = document.getElementById('codeField4');
+    const copyButton = document.getElementById('copyButton');
+
+    copyButton.addEventListener('click', () => {
+        const range = document.createRange();
+        range.selectNode(codeField4);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+    });
+
+    codeField4.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.key === 'a') {
+            event.preventDefault();
+            document.execCommand('selectAll');
+        }
+    });
+    
+        codeField4.addEventListener('input', () => {
+            applySyntaxHighlighting();
+        });
+    
+        function applySyntaxHighlighting() {
+            const code = codeField4.textContent;
+    
+            let highlightedCode = code
+                .replace(/&/g, '&amp;') // Escape ampersands
+                .replace(/</g, '&lt;') // Escape less-than signs
+                .replace(/>/g, '&gt;') // Escape greater-than signs
+                .replace(/\n/g, '<br/>') // Handle line breaks
+                .replace(/(function|const|let|var|if|else|return|for|while|do|switch|case|break|continue|try|catch|finally|throw|class|extends|constructor|import|export|default|async|await)\b/g, '<span class="keyword">$1</span>')
+                .replace(/'(.*?)'/g, '<span class="string">\'$1\'</span>')
+                .replace(/\/\/\s*(GLOBAL COLORS|ATMOS|DEFAULT|INVERSE|ALPHA|GLOBAL|BODY|TITLE|HEADER|PRIMARY|SECONDARY|TERTIARY)/g, '<span class="comment">//$1</span>') // Highlight specific comments
+                .replace(/\/\*([\s\S]*?)\*\//g, '<span class="comment">/*$1*/</span>')
+                .replace(/&lt;\/?\w+[^&gt;]*&gt;/g, '<span class="html-tag">$&</span>') // HTML tags
+                .replace(/&lt;\/?\w+[^&gt;]*?(\s+\w+(\s*=\s*(["\'][^"|']*["\']|[^&gt;\s]+))?)*&gt;/g, (match) => {
+                    return match.replace(/(\s+\w+)(\s*=\s*("|')[^"|']*("|'))?/g, '<span class="html-attribute">$1</span>$2');
+                })
+                .replace(/(\w+)\s*:/g, '<span class="css-property">$1</span>:')
+                .replace(/(\s*\{|\s*\})/g, '<span class="css-brace">$1</span>')
+                .replace(/;\s*/g, '<span class="css-semicolon">;</span>')
+                .replace(/(\$[\w-]+)\b/g, '<span class="scss-variable">$1</span>') // SCSS variables like $grey6
+                .replace(/(#\{?\$[\w-]+\}?)/g, '<span class="scss-interpolation">$1</span>') // SCSS interpolation like #{$grey6}
+                .replace(/(--[\w-]+)\b/g, '<span class="css-custom-property">$1</span>') // CSS custom properties like --bg-primary
+                .replace(/:\s*([\d.]+%)/g, '<span class="percentage">$1</span>'); // Highlight percentages like 90%
+    
+            codeField4.innerHTML = highlightedCode;
+        }
+    
+        // Initial highlight
+        applySyntaxHighlighting();
+    });
+
+    </script>

@@ -1,11 +1,11 @@
 // PRIMARY
 button.primary {
-    color: #fafafa;
+    color: $grey1;
     background-color: var(--atmos-default);
     padding: $block12 $block16;
-    height: 40px;
+    height: $block40;
     display: flex;
-    gap: 2px;
+    gap: $block2;
     font-size: 14px;
     font-weight: 600;
     line-height: 115%;
@@ -14,6 +14,9 @@ button.primary {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    svg {
+        fill: $grey1;
+    }
 }
 
 button.primary:hover {
@@ -72,7 +75,9 @@ button.tertiary {
     text-decoration: none;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
+    svg {
+        fill: var(--text-primary);
+    }
 }
 
 button.tertiary:hover {

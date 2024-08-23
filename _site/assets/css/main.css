@@ -32,6 +32,9 @@ button.primary {
   border-radius: 4px;
   cursor: pointer;
 }
+button.primary svg {
+  fill: #fafafa;
+}
 
 button.primary:hover {
   background-color: var(--atmos-default-hover);
@@ -87,7 +90,9 @@ button.tertiary {
   text-decoration: none;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+}
+button.tertiary svg {
+  fill: var(--text-primary);
 }
 
 button.tertiary:hover {
@@ -116,7 +121,7 @@ button.tertiary:active {
   width: 100%;
 }
 
-#codeField, #codeField2, #codeField3 {
+#codeField, #codeField2, #codeField3, #codeField4 {
   width: calc(100% - 48px);
   height: 384px;
   padding: 24px;
@@ -270,80 +275,6 @@ html[data-theme=dark] {
   background-color: var(--bg-primary-opacity90);
 }
 
-/*slider switch css */
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 24px;
-  right: 24px;
-}
-.theme-switch-wrapper em {
-  margin-left: 10px;
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  font-family: "Andalé Mono", monospace;
-  text-transform: uppercase;
-  font-style: normal;
-  color: var(--text-primary);
-}
-
-.theme-switch {
-  display: inline-block;
-  height: 24px;
-  position: relative;
-  width: 48px;
-}
-
-.theme-switch input {
-  display: none;
-}
-
-.slider {
-  background-color: var(--bg-secondary);
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  bottom: 0px;
-  top: 0px;
-  transition: 0.4s;
-  outline: 1px solid var(--input-stroke);
-}
-
-.slider:hover {
-  outline: 1px solid var(--input-stroke-hover);
-}
-
-.slider:before {
-  background-color: var(--bg-primary-inverse);
-  bottom: 2px;
-  content: "";
-  height: 20px;
-  left: 2px;
-  position: absolute;
-  transition: 0.4s;
-  width: 20px;
-}
-
-input:checked + .slider {
-  background-color: #3E54F7;
-  outline: none;
-}
-
-input:checked + .slider:before {
-  background-color: var(--bg-primary-inverse);
-  transform: translateX(24px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
 @font-face {
   font-family: "SegoeUI-VF";
   src: url("../../assets/fonts/SegoeUI-VF.woff") format("woff"), url("../../assets/fonts/SegoeUI-VF.ttf") format("truetype");
@@ -454,6 +385,22 @@ h4 {
   letter-spacing: -0.48px;
 }
 
+/* unvisited link */
+a:link {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+a:link:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: var(--text-primary);
+}
+
 footer {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -490,6 +437,9 @@ header {
   background-color: var(--bg-primary-inverse-opacity10);
   backdrop-filter: blur(6px);
   margin: 12px;
+}
+header svg {
+  fill: var(--text-primary) !important;
 }
 
 .intro {
@@ -530,6 +480,82 @@ header {
   background: var(--input-stroke-hover);
 }
 
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+}
+.theme-switch-wrapper em {
+  margin-left: 10px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  font-family: "Andalé Mono", monospace;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--text-primary);
+}
+
+.theme-switch,
+.switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 48px;
+}
+
+.theme-switch input,
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  top: 0px;
+  transition: 0.4s;
+  outline: 1px solid var(--input-stroke);
+}
+
+.slider:hover {
+  outline: 1px solid var(--input-stroke-hover);
+}
+
+.slider:before {
+  background-color: var(--bg-primary-inverse);
+  bottom: 2px;
+  content: "";
+  height: 20px;
+  left: 2px;
+  position: absolute;
+  transition: 0.4s;
+  width: 20px;
+}
+
+input:checked + .slider {
+  background-color: #3E54F7;
+  outline: none;
+}
+
+input:checked + .slider:before {
+  background-color: #fafafa;
+  transform: translateX(24px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  background-color: var(--bg-primary-inverse);
+  border-radius: 50%;
+}
+
 .window {
   position: absolute;
   background-color: var(--bg-primary-opacity90);
@@ -563,6 +589,11 @@ header {
 #window4 {
   width: 65vw;
   height: 85vh;
+}
+
+#window5 {
+  width: 70vw;
+  height: 70vh;
 }
 
 .window.closing {
