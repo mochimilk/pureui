@@ -21,18 +21,18 @@ background-color: var(--bg-primary-opacity90);
 }
 
 /* Syntax highlighting styles */
-.keyword { color: blue; }
-.string { color: green; }
+.keyword { color: var(--crayon-purple); }
+.string { color: var(--crayon-baby); }
 .comment { color: var(--text-secondary); } /* Only these specific comments are grey */
-.html-tag { color: #d73a49; }
-.html-attribute { color: #e06c75; }
-.css-property { color: #61afef; }
-.css-brace { color: #c678dd; }
-.css-semicolon { color: #e06c75; }
-.scss-variable { color: #c678dd; } /* SCSS variables */
-.scss-interpolation { color: #e06c75; } /* SCSS interpolation */
-.css-custom-property { color: #61afef; } /* CSS custom properties */
-.percentage { color: #d19a66; } /* Percentages */
+.html-tag { color: var(--crayon-purple); }
+.html-attribute { color: var(--crayon-red); }
+.css-property { color: var(--crayon-baby); }
+.css-brace { color: var(--crayon-purple); }
+.css-semicolon { color: var(--crayon-red); }
+.scss-variable { color: var(--crayon-purple); } /* SCSS variables */
+.scss-interpolation { color: var(--crayon-red); } /* SCSS interpolation */
+.css-custom-property { color: var(--crayon-baby); } /* CSS custom properties */
+.percentage { color: var(--crayon-baby); } /* Percentages */
 
 
 

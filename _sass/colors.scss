@@ -1,5 +1,3 @@
-
-
 // ATMOS
 $atmos7: #253294;
 $atmos6: #3243C5;
@@ -9,18 +7,31 @@ $atmos3: #8B98FA;
 $atmos2: #B2BBFC;
 $atmos1: #D8DDFD;
 
+// CRAYON
+$crayon1: #ED5564;
+$crayon2: #FFCE55;
+$crayon3: #48CFAE;
+$crayon4: #4FC0E8;
+$crayon5: #538CD3;
+$crayon6: #D54D5B;
+$crayon7: #E5B94C;
+$crayon8: #41BA9B;
+$crayon9: #47AED1;
+$crayon10: #538CD3;
+
+
 
 
 html,
 html[data-theme="light"] {
   // DEFAULT
-	--bg-primary: #{$white};
+  --bg-primary: #{$white};
   --bg-primary-hover: #{$grey4};
   --bg-primary-pressed: #{$grey5};
   --bg-secondary: #{$grey3};
   --bg-secondary-hover: #{$grey4};
   --bg-secondary-pressed: #{$grey5};
-	--text-primary: #{$grey14};
+  --text-primary: #{$grey14};
   --text-secondary: #{$grey10};
   --input-stroke: #{$grey8};
   --input-stroke-hover: #{$grey10};
@@ -32,7 +43,7 @@ html[data-theme="light"] {
   --bg-secondary-inverse: #{$grey12};
   --bg-secondary-hover-inverse: #{$grey13};
   --bg-secondary-pressed-inverse: #{$grey14};
-	--text-primary-inverse: #{$grey1};
+  --text-primary-inverse: #{$grey1};
   --text-secondary-inverse: #{$grey8};
   --input-stroke-inverse: #{$grey10};
   --input-stroke-hover-inverse: #{$grey8};
@@ -45,18 +56,24 @@ html[data-theme="light"] {
   --atmos-default: #{$atmos5};
   --atmos-default-hover: #{$atmos6};
   --atmos-default-pressed: #{$atmos7};
+  // CRAYON
+  --crayon-red: #{$crayon6};
+  --crayon-yellow: #{$crayon7};
+  --crayon-green: #{$crayon8};
+  --crayon-baby: #{$crayon9};
+  --crayon-purple: #{$crayon10};
 }
 
 html,
-html[data-theme="dark"]{
+html[data-theme="dark"] {
   // DEFAULT
-	--bg-primary: #{$grey13};
+  --bg-primary: #{$grey13};
   --bg-primary-hover: #{$grey14};
   --bg-primary-pressed: #{$black};
   --bg-secondary: #{$grey12};
   --bg-secondary-hover: #{$grey13};
   --bg-secondary-pressed: #{$grey14};
-	--text-primary: #{$grey1};
+  --text-primary: #{$grey1};
   --text-secondary: #{$grey8};
   --input-stroke: #{$grey10};
   --input-stroke-hover: #{$grey8};
@@ -68,18 +85,23 @@ html[data-theme="dark"]{
   --bg-secondary-inverse: #{$grey3};
   --bg-secondary-hover-inverse: #{$grey4};
   --bg-secondary-pressed-inverse: #{$grey5};
-	--text-primary-inverse: #{$grey14};
+  --text-primary-inverse: #{$grey14};
   --text-secondary-inverse: #{$grey10};
   --input-stroke-inverse: #{$grey8};
   --input-stroke-hover-inverse: #{$grey10};
   --input-stroke-pressed-inverse: #{$grey12};
-    // ALPHA
-    --alpha: 90%;
-    --bg-primary-opacity90: #{$grey13-opacity90};
-    --bg-primary-inverse-opacity10: #{$white-opacity10};
-      // ATMOS
+  // ALPHA
+  --alpha: 90%;
+  --bg-primary-opacity90: #{$grey13-opacity90};
+  --bg-primary-inverse-opacity10: #{$white-opacity10};
+  // ATMOS
   --atmos-default: #{$atmos5};
   --atmos-default-hover: #{$atmos6};
   --atmos-default-pressed: #{$atmos7};
+  // CRAYON
+  --crayon-red: #{$crayon1};
+  --crayon-yellow: #{$crayon2};
+  --crayon-green: #{$crayon3};
+  --crayon-baby: #{$crayon4};
+  --crayon-purple: #{$crayon5};
 }
-

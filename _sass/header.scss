@@ -16,7 +16,18 @@ header {
 	backdrop-filter: blur(6px);
 	margin: $block12;
 	// filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.30));
+	overflow-y: scroll;
 	svg {
 		fill: var(--text-primary) !important;
 	}
 }
+
+header::-webkit-scrollbar {
+	display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  header {
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+  }

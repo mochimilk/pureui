@@ -19,6 +19,7 @@ button.primary {
     }
 }
 
+
 button.primary:hover {
     background-color: var(--atmos-default-hover);
 }
@@ -26,6 +27,38 @@ button.primary:hover {
 button.primary:active {
     background-color: var(--atmos-default-pressed);
 }
+
+.merp-close {
+    color: var(--text-primary-inverse);
+    background-color: var(--bg-primary-inverse);
+    padding: $block10 $block32;
+    height: $block64;
+    display: flex;
+    align-items: center;
+    gap: $block2;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 115%;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    svg {
+        fill: $grey1;
+    }
+}
+
+.merp-close:hover {
+    background-color: var(--bg-primary-hover-inverse);
+    // width: 100%;
+}
+
+.merp-close:active {
+    background-color: var(--bg-primary-pressed-inverse);
+}
+
+
 
 // SECONDARY
 button.secondary {

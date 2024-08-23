@@ -1,0 +1,36 @@
+.guide {
+    // position:absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    margin: $block64 0px;
+
+    svg {
+        fill: var(--text-secondary);
+    }
+
+
+}
+
+.guide-content-child {
+    color: var(--text-secondary);
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    text-align: left;
+
+
+    gap: -16px;
+    margin-top: 48px;
+    padding-right: $block16;
+    min-width: $block128;
+}

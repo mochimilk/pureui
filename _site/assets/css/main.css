@@ -44,6 +44,35 @@ button.primary:active {
   background-color: var(--atmos-default-pressed);
 }
 
+.merp-close {
+  color: var(--text-primary-inverse);
+  background-color: var(--bg-primary-inverse);
+  padding: 10px 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 115%;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+}
+.merp-close svg {
+  fill: #fafafa;
+}
+
+.merp-close:hover {
+  background-color: var(--bg-primary-hover-inverse);
+}
+
+.merp-close:active {
+  background-color: var(--bg-primary-pressed-inverse);
+}
+
 button.secondary {
   color: var(--text-primary);
   background-color: transparent;
@@ -135,47 +164,47 @@ button.tertiary:active {
 
 /* Syntax highlighting styles */
 .keyword {
-  color: blue;
+  color: var(--crayon-purple);
 }
 
 .string {
-  color: green;
+  color: var(--crayon-baby);
 }
 
 .comment {
   color: var(--text-secondary);
 } /* Only these specific comments are grey */
 .html-tag {
-  color: #d73a49;
+  color: var(--crayon-purple);
 }
 
 .html-attribute {
-  color: #e06c75;
+  color: var(--crayon-red);
 }
 
 .css-property {
-  color: #61afef;
+  color: var(--crayon-baby);
 }
 
 .css-brace {
-  color: #c678dd;
+  color: var(--crayon-purple);
 }
 
 .css-semicolon {
-  color: #e06c75;
+  color: var(--crayon-red);
 }
 
 .scss-variable {
-  color: #c678dd;
+  color: var(--crayon-purple);
 } /* SCSS variables */
 .scss-interpolation {
-  color: #e06c75;
+  color: var(--crayon-red);
 } /* SCSS interpolation */
 .css-custom-property {
-  color: #61afef;
+  color: var(--crayon-baby);
 } /* CSS custom properties */
 .percentage {
-  color: #d19a66;
+  color: var(--crayon-baby);
 } /* Percentages */
 .copy-alert {
   visibility: hidden;
@@ -231,6 +260,11 @@ html[data-theme=light] {
   --atmos-default: #3E54F7;
   --atmos-default-hover: #3243C5;
   --atmos-default-pressed: #253294;
+  --crayon-red: #D54D5B;
+  --crayon-yellow: #E5B94C;
+  --crayon-green: #41BA9B;
+  --crayon-baby: #47AED1;
+  --crayon-purple: #538CD3;
 }
 
 html,
@@ -263,6 +297,11 @@ html[data-theme=dark] {
   --atmos-default: #3E54F7;
   --atmos-default-hover: #3243C5;
   --atmos-default-pressed: #253294;
+  --crayon-red: #ED5564;
+  --crayon-yellow: #FFCE55;
+  --crayon-green: #48CFAE;
+  --crayon-baby: #4FC0E8;
+  --crayon-purple: #538CD3;
 }
 
 .component-showcase {
@@ -385,6 +424,11 @@ h4 {
   letter-spacing: -0.48px;
 }
 
+p.caption {
+  font-size: 12px;
+  line-height: 135%;
+}
+
 /* unvisited link */
 a:link {
   color: var(--text-primary);
@@ -420,6 +464,32 @@ footer {
   gap: 8px;
 }
 
+.guide {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  margin: 64px 0px;
+}
+.guide svg {
+  fill: var(--text-secondary);
+}
+
+.guide-content-child {
+  color: var(--text-secondary);
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  gap: -16px;
+  margin-top: 48px;
+  padding-right: 16px;
+  min-width: 128px;
+}
+
 header {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -437,9 +507,20 @@ header {
   background-color: var(--bg-primary-inverse-opacity10);
   backdrop-filter: blur(6px);
   margin: 12px;
+  overflow-y: scroll;
 }
 header svg {
   fill: var(--text-primary) !important;
+}
+
+header::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+header {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .intro {
